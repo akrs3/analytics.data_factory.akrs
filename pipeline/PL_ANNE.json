@@ -63,6 +63,14 @@
 			"Table": {
 				"type": "string",
 				"defaultValue": "Product"
+			},
+			"Container": {
+				"type": "string",
+				"defaultValue": "avanade"
+			},
+			"Directory": {
+				"type": "string",
+				"defaultValue": "RAW"
 			}
 		},
 		"annotations": []
