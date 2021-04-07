@@ -34,7 +34,17 @@
 				"inputs": [
 					{
 						"referenceName": "DS_AZSQL_ANNE",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Schema": {
+								"value": "@pipeline().parameters.Schema",
+								"type": "Expression"
+							},
+							"Table": {
+								"value": "@pipeline().parameters.Table",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
