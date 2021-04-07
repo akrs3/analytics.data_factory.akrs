@@ -1,0 +1,9 @@
+{
+	"name": "adf-academy-eu2-int1",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ce67491a-9743-437c-8c6c-6af854bef87e",
+		"tenantId": "cf36141c-ddd7-45a7-b073-111f66d0b30c"
+	}
+}
