@@ -70,7 +70,7 @@
 			},
 			"Directory": {
 				"type": "string",
-				"defaultValue": "RAW"
+				"defaultValue": "RAW/Products"
 			}
 		},
 		"annotations": []
