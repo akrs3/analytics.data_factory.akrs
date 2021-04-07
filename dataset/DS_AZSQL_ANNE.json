@@ -5,6 +5,14 @@
 			"referenceName": "LS_AZSQL_ANNE",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Schema": {
+				"type": "string"
+			},
+			"Table": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [
@@ -95,8 +103,14 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "SalesLT",
-			"table": "Product"
+			"schema": {
+				"value": "@dataset().Schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().Table",
+				"type": "Expression"
+			}
 		}
 	}
 }
