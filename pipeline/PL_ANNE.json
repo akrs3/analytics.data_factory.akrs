@@ -45,6 +45,16 @@
 				]
 			}
 		],
+		"parameters": {
+			"Schema": {
+				"type": "string",
+				"defaultValue": "SalesLT"
+			},
+			"Table": {
+				"type": "string",
+				"defaultValue": "Product"
+			}
+		},
 		"annotations": []
 	}
 }
