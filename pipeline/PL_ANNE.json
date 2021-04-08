@@ -103,6 +103,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -331,6 +332,60 @@
 									"enablePartitionDiscovery": false
 								}
 							}
+						},
+						{
+							"name": "MV_ERRO",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "ADLS_JSON_PARQUET",
+									"dependencyConditions": [
+										"Failed"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "JsonSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"wildcardFileName": {
+											"value": "@item().name",
+											"type": "Expression"
+										},
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "JsonReadSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "DS_ADLS_ANNE",
+									"type": "DatasetReference",
+									"parameters": {
+										"Container": {
+											"value": "@pipeline().parameters.Container",
+											"type": "Expression"
+										},
+										"Directory": {
+											"value": "@pipeline().parameters.Directory",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						}
 					]
 				}
