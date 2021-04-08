@@ -3,7 +3,13 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_AZSQL_ANNE",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"ScrectName": {
+					"value": "@dataset().SecretName",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"Schema": {
