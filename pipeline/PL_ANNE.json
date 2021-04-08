@@ -368,6 +368,15 @@
 										"type": "JsonReadSettings"
 									}
 								},
+								"sink": {
+									"type": "JsonSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "JsonWriteSettings"
+									}
+								},
 								"enableStaging": false
 							},
 							"inputs": [
@@ -381,6 +390,22 @@
 										},
 										"Directory": {
 											"value": "@pipeline().parameters.Directory",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_ADLS_ANNE",
+									"type": "DatasetReference",
+									"parameters": {
+										"Container": {
+											"value": "@pipeline().parameters.Container",
+											"type": "Expression"
+										},
+										"Directory": {
+											"value": "@CONCAT('RAW/Products/ERRO/Products/',formatDateTime(utcnow(),'yyyyMMdd'))",
 											"type": "Expression"
 										}
 									}
