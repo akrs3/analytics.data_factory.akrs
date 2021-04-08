@@ -11,6 +11,9 @@
 			},
 			"Table": {
 				"type": "string"
+			},
+			"SecretName": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
