@@ -557,6 +557,105 @@
 								"referenceName": "LS_AZSQL_ANNE",
 								"type": "LinkedServiceReference"
 							}
+						},
+						{
+							"name": "LOG_ERRO",
+							"type": "SqlServerStoredProcedure",
+							"dependsOn": [
+								{
+									"activity": "ADLS_JSON_PARQUET",
+									"dependencyConditions": [
+										"Failed"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"storedProcedureName": "[dbo].[SP_LOG_CURATED]",
+								"storedProcedureParameters": {
+									"COPY_DURATION": {
+										"value": {
+											"value": "@activity('ADLS_JSON_PARQUET').output.copyDuration",
+											"type": "Expression"
+										},
+										"type": "Int32"
+									},
+									"DATA_READ": {
+										"value": {
+											"value": "@activity('ADLS_JSON_PARQUET').output.dataRead",
+											"type": "Expression"
+										},
+										"type": "Int64"
+									},
+									"DATA_WRITTEN": {
+										"value": {
+											"value": "@activity('ADLS_JSON_PARQUET').output.dataWritten",
+											"type": "Expression"
+										},
+										"type": "Int64"
+									},
+									"DT_START": {
+										"value": {
+											"value": "@activity('ADLS_JSON_PARQUET').output.executionDetails[0].start",
+											"type": "Expression"
+										},
+										"type": "DateTime"
+									},
+									"FILES_READ": {
+										"value": {
+											"value": "@activity('ADLS_JSON_PARQUET').output.filesRead",
+											"type": "Expression"
+										},
+										"type": "Int64"
+									},
+									"FILES_WRITTEN": {
+										"value": {
+											"value": "@activity('ADLS_JSON_PARQUET').output.filesWritten",
+											"type": "Expression"
+										},
+										"type": "Int64"
+									},
+									"ROWS_COPIED": {
+										"value": {
+											"value": "@activity('ADLS_JSON_PARQUET').output.rowsCopied",
+											"type": "Expression"
+										},
+										"type": "Int64"
+									},
+									"ROWS_READ": {
+										"value": {
+											"value": "@activity('ADLS_JSON_PARQUET').output.rowsRead",
+											"type": "Expression"
+										},
+										"type": "Int64"
+									},
+									"STATUS": {
+										"value": {
+											"value": "@activity('ADLS_JSON_PARQUET').output.executionDetails[0].status",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"THROUGHPUT": {
+										"value": {
+											"value": "@activity('ADLS_JSON_PARQUET').output.throughput",
+											"type": "Expression"
+										},
+										"type": "Double"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "LS_AZSQL_ANNE",
+								"type": "LinkedServiceReference"
+							}
 						}
 					]
 				}
