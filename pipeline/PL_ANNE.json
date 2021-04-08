@@ -677,6 +677,10 @@
 			"Directory": {
 				"type": "string",
 				"defaultValue": "RAW/Products/Processar"
+			},
+			"SecretName": {
+				"type": "string",
+				"defaultValue": "snazsql"
 			}
 		},
 		"annotations": []
