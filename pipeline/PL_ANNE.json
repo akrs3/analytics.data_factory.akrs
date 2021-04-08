@@ -148,7 +148,7 @@
 										"type": "AzureBlobFSReadSettings",
 										"recursive": false,
 										"modifiedDatetimeEnd": {
-											"value": "@item.name",
+											"value": "@item().name",
 											"type": "Expression"
 										},
 										"wildcardFileName": "@item().name",
