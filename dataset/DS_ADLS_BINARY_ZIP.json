@@ -16,6 +16,10 @@
 				},
 				"folderPath": "avanade",
 				"fileSystem": "ftp"
+			},
+			"compression": {
+				"type": "ZipDeflate",
+				"level": "Fastest"
 			}
 		}
 	}
