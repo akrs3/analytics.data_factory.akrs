@@ -1,0 +1,16 @@
+{
+	"name": "DS_ADLS_BINARY_DESCOMPACTADO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_ANNE",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			}
+		}
+	}
+}
