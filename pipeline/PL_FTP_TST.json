@@ -48,6 +48,25 @@
 						"value": "@activity('Get Metadata1').output.exists",
 						"type": "Expression"
 					},
+					"ifFalseActivities": [
+						{
+							"name": "Web1",
+							"type": "WebActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"url": "",
+								"method": "GET"
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "Copy data1",
@@ -125,6 +144,16 @@
 								"compute": {
 									"coreCount": 8,
 									"computeType": "General"
+								},
+								"sinks": {
+									"UserQuery": {
+										"name": "SinkDS_AZSQL_PWQ",
+										"dataset": {
+											"referenceName": "DS_AZSQL_PWQ",
+											"type": "DatasetReference"
+										},
+										"script": "sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> SinkDS_AZSQL_PWQ"
+									}
 								}
 							}
 						}
