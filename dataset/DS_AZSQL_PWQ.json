@@ -1,0 +1,15 @@
+{
+	"name": "DS_AZSQL_PWQ",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AZSQL_ANNE",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"ScrectName": "snazsql"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
