@@ -43,6 +43,10 @@
 							"Table": {
 								"value": "@pipeline().parameters.Table",
 								"type": "Expression"
+							},
+							"SecretName": {
+								"value": "@pipeline().parameters.SecretName",
+								"type": "Expression"
 							}
 						}
 					}
@@ -147,7 +151,10 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": false,
-										"wildcardFileName": "@item().name",
+										"wildcardFileName": {
+											"value": "@item().name",
+											"type": "Expression"
+										},
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -454,7 +461,10 @@
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
 									"recursive": true,
-									"wildcardFileName": "@item().name",
+									"wildcardFileName": {
+										"value": "@item().name",
+										"type": "Expression"
+									},
 									"enablePartitionDiscovery": false
 								}
 							}
