@@ -3,10 +3,7 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_AZSQL_ANNE",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"ScrectName": "snazsql"
-			}
+			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
