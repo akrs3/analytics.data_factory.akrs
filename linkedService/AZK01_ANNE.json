@@ -1,0 +1,10 @@
+{
+	"name": "AZK01_ANNE",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://azkv-academy-eu2-int1.vault.azure.net/"
+		}
+	}
+}

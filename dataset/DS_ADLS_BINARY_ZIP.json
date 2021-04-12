@@ -1,0 +1,26 @@
+{
+	"name": "DS_ADLS_BINARY_ZIP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_ANNE",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(formatDateTime(utcnow(),'yyyy-MM-dd'), '.zip')",
+					"type": "Expression"
+				},
+				"folderPath": "avanade",
+				"fileSystem": "ftp"
+			},
+			"compression": {
+				"type": "ZipDeflate",
+				"level": "Fastest"
+			}
+		}
+	}
+}

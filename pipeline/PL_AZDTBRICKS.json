@@ -1,0 +1,28 @@
+{
+	"name": "PL_AZDTBRICKS",
+	"properties": {
+		"activities": [
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/a.ribeiro.da.silva@avanade.com/Avanade/nyctlc"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_AZDBRICKS",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}

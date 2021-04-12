@@ -1,0 +1,88 @@
+{
+	"name": "DS_ADLS_ANNE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_ANNE",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Container": {
+				"type": "string"
+			},
+			"Directory": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().Directory",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().Container",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"ProductID": {
+					"type": "integer"
+				},
+				"Name": {
+					"type": "string"
+				},
+				"ProductNumber": {
+					"type": "string"
+				},
+				"Color": {
+					"type": "string"
+				},
+				"StandardCost": {
+					"type": "number"
+				},
+				"ListPrice": {
+					"type": "number"
+				},
+				"Size": {
+					"type": "string"
+				},
+				"Weight": {
+					"type": "number"
+				},
+				"ProductCategoryID": {
+					"type": "integer"
+				},
+				"ProductModelID": {
+					"type": "integer"
+				},
+				"SellStartDate": {
+					"type": "string"
+				},
+				"SellEndDate": {
+					"type": "string"
+				},
+				"DiscontinuedDate": {
+					"type": "null"
+				},
+				"ThumbNailPhoto": {
+					"type": "string"
+				},
+				"ThumbnailPhotoFileName": {
+					"type": "string"
+				},
+				"rowguid": {
+					"type": "string"
+				},
+				"ModifiedDate": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
