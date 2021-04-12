@@ -87,7 +87,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['data'][0]['id']"
+									"path": "['id']"
 								},
 								"sink": {
 									"name": "id"
@@ -95,7 +95,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['employee_name']"
+									"path": "['employee_name']"
 								},
 								"sink": {
 									"name": "employee_name"
@@ -103,7 +103,7 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['employee_salary']"
+									"path": "['employee_salary']"
 								},
 								"sink": {
 									"name": "employee_salary"
@@ -111,13 +111,15 @@
 							},
 							{
 								"source": {
-									"path": "$['data'][0]['employee_age']"
+									"path": "['employee_age']"
 								},
 								"sink": {
 									"name": "employee_age"
 								}
 							}
-						]
+						],
+						"collectionReference": "$['data']",
+						"mapComplexValuesToString": true
 					}
 				},
 				"inputs": [
