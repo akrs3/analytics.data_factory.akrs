@@ -10,7 +10,7 @@
 					"referenceName": "AZK01_ANNE",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "teste"
+				"secretName": "sn-adlsgen2"
 			}
 		}
 	},
